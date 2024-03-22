@@ -1,0 +1,37 @@
+/* Style for <h1> element */
+/* Style for <h1> element with class "title" */
+.title {
+    margin-top: 20px;
+    text-align: center; /* Centers the content horizontally */
+    font-family: 'Tangerine', cursive; /* Example of a cursive font */
+    font-size: 48px; /* Example font size */
+    color: #333; /* Example color */
+    margin-bottom: 20px; /* Example margin */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Example text shadow */
+  }
+  
+  
+  /* Style for <nav> element */
+  nav {
+    text-align: center; /* Centers the content horizontally */
+    margin-top: 30px; /* Example margin */
+  }
+  
+  /* Style for <a> elements within <nav> */
+  nav a {
+    padding: 10px 20px; /* Example padding */
+    text-decoration: none;
+    background-color: #e8e8e8; /* Example background color */
+    color: #333; /* Example text color */
+    border-radius: 4px; /* Example border radius */
+    margin: 0 10px; /* Example margin */
+  }
+  
+  /* Style for <a> elements within <nav> when hovered */
+  nav a:hover {
+    background-color: #42545C; /* Example background color on hover */
+    color: white; /* Example text color on hover */
+  }
+  
+
+

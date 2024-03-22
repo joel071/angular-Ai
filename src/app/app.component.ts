@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ChatbotService } from './chatbot.service';
+
 
 @Component({
   selector: 'app-root',

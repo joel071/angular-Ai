@@ -1,0 +1,78 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack items vertically */
+    height: 60vh; /* Half of the viewport height */
+    padding: 100px;
+  }
+  
+  .box {
+    width: 50vw; /* Half of the viewport width */
+    height: 50vh; /* Half of the viewport height */
+    background-color: #f0f0f0;
+    border: 2px solid #302c2c;
+    border-radius: 10px;
+    padding: 50px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Optional: Add some space between the box and the input */
+  }
+  
+  form {
+    display: flex;
+    width: 50%;
+  }
+  
+  .input {
+    width: 20vw; /* Half of the viewport width */
+    height: 2vh;
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #6b7279;
+    color: white;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .message {
+    padding: 10px;
+    margin-bottom: 5px;
+    display: flex; /* Aligns items in a row */
+    align-items: center; /* Vertically centers items */
+  }
+  
+  /* Styling for bot messages */
+  .message.from {
+    background-color: #d3e8fd; /* Light blue background */
+    color: #333; /* Dark text color */
+    border-radius: 10px; /* Rounded corners */
+    margin-left: 10px; /* Add margin to the left */
+    margin-right: 200px;
+  }
+  
+  /* Styling for user messages */
+  .message.to {
+    background-color: #e6f7ff; /* Light blue background */
+    color: #333; /* Dark text color */
+    border-radius: 10px; /* Rounded corners */
+    margin-left: 200px; /* Add margin to the right */
+  }
+  
+  .avatar {
+    width: 30px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
+    border-radius: 50%; /* Make the image circular */
+    margin-right: 10px; /* Add space between image and message */
+    margin-left: 10px; /* Add space between image and message */
+  }

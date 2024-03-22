@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="box">
+    <ng-container *ngFor="let message of messages">
+      <div class="message" [ngClass]="{from: message.author === 'bot',to: message.author === 'user'}">
+        <img *ngIf="message.author === 'bot'" src="assets\robot.png" alt="Robot Image" class="avatar">
+        <img *ngIf="message.author === 'user'" src="assets\avataaars.png" alt="User Image" class="avatar">
+        {{ message.content }}
+      </div>
+    </ng-container>
+  </div>
+  <div class="form">
+    <input [(ngModel)]="value" (keyup.enter)="sendMessage()" type="text" class="input" placeholder="Enter Your Prompt"
+      aria-label="Recipient's username" aria-describedby="button-addon2">
+    <button (click)="sendMessage()" class="button" type="button" id="button-addon2">Send</button>
+  </div>
+</div>
