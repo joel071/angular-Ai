@@ -7,13 +7,15 @@ import { FormsModule } from '@angular/forms';
 import { ChatbotService } from './chatbot.service';
 import { ChatBotComponent } from './chat-bot/chat-bot.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { UploadComponent } from './upload/upload.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatBotComponent,
-    DashboardComponent
+    DashboardComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,

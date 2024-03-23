@@ -10,7 +10,7 @@
   .box {
     width: 50vw; /* Half of the viewport width */
     height: 50vh; /* Half of the viewport height */
-    background-color: #f0f0f0;
+    background-color: #ffffff;
     border: 2px solid #302c2c;
     border-radius: 10px;
     padding: 50px;
@@ -54,19 +54,21 @@
   
   /* Styling for bot messages */
   .message.from {
-    background-color: #d3e8fd; /* Light blue background */
-    color: #333; /* Dark text color */
+    background-color: #ffffff; /* Light blue background */
+    color: #000000; /* Dark text color */
     border-radius: 10px; /* Rounded corners */
     margin-left: 10px; /* Add margin to the left */
-    margin-right: 200px;
+    margin-right: 400px;
+    border: 2px solid #302c2c;
   }
   
   /* Styling for user messages */
   .message.to {
-    background-color: #e6f7ff; /* Light blue background */
-    color: #333; /* Dark text color */
+    background-color: #ffffff; /* Light blue background */
+    color: #000000; /* Dark text color */
     border-radius: 10px; /* Rounded corners */
-    margin-left: 200px; /* Add margin to the right */
+    margin-left: 400px; /* Add margin to the right */
+    border: 2px solid #302c2c;
   }
   
   .avatar {

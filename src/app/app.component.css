@@ -1,37 +1,52 @@
-/* Style for <h1> element */
-/* Style for <h1> element with class "title" */
+.header {
+  display: flex;
+  align-items: center;
+}
+
 .title {
-    margin-top: 20px;
-    text-align: center; /* Centers the content horizontally */
-    font-family: 'Tangerine', cursive; /* Example of a cursive font */
-    font-size: 48px; /* Example font size */
-    color: #333; /* Example color */
-    margin-bottom: 20px; /* Example margin */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Example text shadow */
-  }
-  
-  
-  /* Style for <nav> element */
-  nav {
-    text-align: center; /* Centers the content horizontally */
-    margin-top: 30px; /* Example margin */
-  }
-  
-  /* Style for <a> elements within <nav> */
-  nav a {
-    padding: 10px 20px; /* Example padding */
-    text-decoration: none;
-    background-color: #e8e8e8; /* Example background color */
-    color: #333; /* Example text color */
-    border-radius: 4px; /* Example border radius */
-    margin: 0 10px; /* Example margin */
-  }
-  
-  /* Style for <a> elements within <nav> when hovered */
-  nav a:hover {
-    background-color: #42545C; /* Example background color on hover */
-    color: white; /* Example text color on hover */
-  }
-  
+  font-size: 1rem;
+  font-weight: bold;
+  margin-right: 3rem; /* Add some margin between title and nav */
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: #1c1d1f; /* Next.js default link color */
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 20px;
+}
+
+nav a:hover {
+  background-color: #6a6d75; /* Next.js default link background color on hover */
+  color: #3f3f3f; /* Next.js default link color on hover */
+  border-radius: 20px;
+}
+
+
+.line {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #000000; /* Adjust the color of the line */
+  margin-top: 0.1rem; /* Adjust the distance between the line and the header */
+}
+
+
+.logo {
+  width: 60px; /* Adjust size as needed */
+  height: 35px; /* Adjust size as needed */
+  /*border-radius: 50%; /* Make the image circular */
+  /*margin-right: 10px;  Add space between image and message */
+  /*margin-left: 10px; /* Add space between image and message */
+}
 
 
