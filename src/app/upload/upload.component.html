@@ -1,10 +1,12 @@
-<div class="sidebar">
-    <h2>Uploaded Files</h2>
-    <div class="uploaded-files-list">
-        <!-- List of uploaded files will be displayed here -->
-    </div>
-    <div class="upload-section">
+<div class="container">
+    <h2 class="intro_title">Uploaded File</h2>
+    <div class="box">
+        <label for="fileNameInput">File Name:</label>
+        <input type="text" id="fileNameInput">
+        <label for="fileDescriptionInput">File Description:</label>
+        <textarea id="fileDescriptionInput" rows="4"></textarea>
         <label for="fileInput" class="file-label">Upload File</label>
         <input type="file" id="fileInput" class="file-input">
     </div>
+    <button id="uploadButton">Upload</button>
 </div>

@@ -8,8 +8,8 @@
   }
   
   .box {
-    width: 50vw; /* Half of the viewport width */
-    height: 50vh; /* Half of the viewport height */
+    width: 70vw; /* Half of the viewport width */
+    height: 60vh; /* Half of the viewport height */
     background-color: #ffffff;
     border: 2px solid #302c2c;
     border-radius: 10px;
@@ -29,7 +29,7 @@
     height: 2vh;
     flex: 1;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     border-radius: 20px;
     outline: none;
   }

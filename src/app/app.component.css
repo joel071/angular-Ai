@@ -22,10 +22,11 @@ nav a {
   padding: 0.5rem 1rem;
   transition: background-color 0.3s ease, color 0.3s ease;
   border-radius: 20px;
+  border: 2px solid #302c2c;
 }
 
 nav a:hover {
-  background-color: #6a6d75; /* Next.js default link background color on hover */
+  background-color: #ffffff; /* Next.js default link background color on hover */
   color: #3f3f3f; /* Next.js default link color on hover */
   border-radius: 20px;
 }
@@ -36,7 +37,7 @@ nav a:hover {
   display: block;
   width: 100%;
   height: 1px;
-  background-color: #000000; /* Adjust the color of the line */
+  background-color: #363434; /* Adjust the color of the line */
   margin-top: 0.1rem; /* Adjust the distance between the line and the header */
 }
 
