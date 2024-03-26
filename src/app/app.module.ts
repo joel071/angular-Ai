@@ -8,6 +8,8 @@ import { ChatbotService } from './chatbot.service';
 import { ChatBotComponent } from './chat-bot/chat-bot.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UploadComponent } from './upload/upload.component';
+import { UploadFileService } from './upload-file.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -21,9 +23,10 @@ import { UploadComponent } from './upload/upload.component';
     BrowserModule,
     AppRoutingModule,
     MatSlideToggleModule,
-    FormsModule 
+    FormsModule,
+    HttpClientModule 
   ],
-  providers: [ChatbotService],
+  providers: [ChatbotService, UploadFileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

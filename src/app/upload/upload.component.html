@@ -6,7 +6,7 @@
         <label for="fileDescriptionInput">File Description:</label>
         <textarea id="fileDescriptionInput" rows="4"></textarea>
         <label for="fileInput" class="file-label">Upload File</label>
-        <input type="file" id="fileInput" class="file-input">
+        <input type="file" id="fileInput" class="file-input" (change)="selectFile($event)" />
     </div>
-    <button id="uploadButton">Upload</button>
+    <button id="uploadButton" [disabled]="!currentFile" (click)="upload()">Upload</button>
 </div>
