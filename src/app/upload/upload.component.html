@@ -2,9 +2,9 @@
     <h2 class="intro_title">Uploaded File</h2>
     <div class="box">
         <label for="fileNameInput">File Name:</label>
-        <input type="text" id="fileNameInput">
+        <input type="text" id="fileNameInput" [(ngModel)]="fileName" (input)="onFileNameChange($event)">
         <label for="fileDescriptionInput">File Description:</label>
-        <textarea id="fileDescriptionInput" rows="4"></textarea>
+        <textarea id="fileDescriptionInput" rows="4" [(ngModel)]="fileDescription" (change)="onDescriptionChange($event)"></textarea>
         <label for="fileInput" class="file-label">Upload File</label>
         <input type="file" id="fileInput" class="file-input" (change)="selectFile($event)" />
     </div>

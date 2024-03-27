@@ -6,13 +6,15 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UploadFileService {
-  private baseUrl = 'https://7c9c-104-196-174-235.ngrok-free.app';
+  private baseUrl = 'https://3d6f-34-125-112-211.ngrok-free.app';
 
   constructor(private http: HttpClient) { }
 
-  upload(file: File): Observable<HttpEvent<any>>{
+  upload(file: File, fileName: string, fileDescription: string): Observable<HttpEvent<any>>{
     const formData: FormData = new FormData();
     formData.append('file', file);
+    formData.append('fileName', fileName); // Append file name
+    formData.append('fileDescription', fileDescription); // Append file description
     const req = new HttpRequest('POST', `${this.baseUrl}/read_pdf`, formData, {
       responseType: 'json',
     });

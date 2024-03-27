@@ -11,6 +11,8 @@ export class UploadComponent {
   
   currentFile?: File;
   message = '';
+  fileName: string = ''; // Variable to store file name
+  fileDescription: string = ''; // Variable to store file description
   fileInfos?: Observable<any>;
 
   constructor(private uploadService: UploadFileService) { }
@@ -19,10 +21,16 @@ export class UploadComponent {
     this.currentFile = event.target.files.item(0);
   }
 
+  onDescriptionChange(event: any): void {
+    this.fileDescription = event.target.value;
+  }
+  onFileNameChange(event: any): void {
+    this.fileName = event.target.value;
+  }
 
   upload(): void {
     if (this.currentFile) {
-      this.uploadService.upload(this.currentFile).subscribe({
+      this.uploadService.upload(this.currentFile, this.fileName, this.fileDescription).subscribe({
         next: (event: any) => {
           if (event instanceof HttpResponse) {
             this.message = event.body.message;
@@ -40,6 +48,8 @@ export class UploadComponent {
         },
         complete: () => {
           this.currentFile = undefined;
+          this.fileName = ''; // Reset file name
+          this.fileDescription = ''; // Reset file description
         },
       });
     }
