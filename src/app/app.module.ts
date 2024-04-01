@@ -10,6 +10,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UploadComponent } from './upload/upload.component';
 import { UploadFileService } from './upload-file.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FileNotesComponent } from './file-notes/file-notes.component';
+import { FileNotesService } from './file-notes.service';
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     ChatBotComponent,
     DashboardComponent,
-    UploadComponent
+    UploadComponent,
+    FileNotesComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule 
   ],
-  providers: [ChatbotService, UploadFileService],
+  providers: [ChatbotService, UploadFileService, FileNotesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

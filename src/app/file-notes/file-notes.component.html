@@ -1,0 +1,9 @@
+<input type="file" (change)="selectFile($event)">
+<button (click)="onSubmit()">Upload</button>
+
+<div *ngIf="data">
+  <div *ngFor="let item of data">
+    <h3>{{ item.description }}</h3>
+    <p>{{ item.note }}</p>
+  </div>
+</div>
