@@ -30,7 +30,7 @@ export class ChatbotService {
 
 
   async  getBotMessage(question : string) {
-    const apiUrl = 'https://3d6f-34-125-112-211.ngrok-free.app/ask';
+    const apiUrl = 'https://23cf-34-82-4-171.ngrok-free.app';
   
     const data = {
       'question': question

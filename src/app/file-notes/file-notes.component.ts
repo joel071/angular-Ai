@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { FileNotesService } from '../file-notes.service';
-import { HttpResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-file-notes',
   templateUrl: './file-notes.component.html',
-  styleUrl: './file-notes.component.css'
+  styleUrls: ['./file-notes.component.css']
 })
 export class FileNotesComponent {
 
@@ -13,27 +13,42 @@ export class FileNotesComponent {
 
   currentFile: File | null = null;
 
-  constructor(private fileNote: FileNotesService) { }
+  isLoading = false;
+
+  fileName: string = '';
+
+  constructor(private fileNote: FileNotesService, private router: Router) { }
 
   selectFile(event: any): void {
-    this.currentFile = event.target.files.item(0);
+    const file = event.target.files[0];
+    if (file) {
+      this.currentFile = file;
+      this.fileName = file.name;
+    } else {
+      this.currentFile = null;
+      this.fileName = '';
+    }
   }
 
   onSubmit() {
     if (this.currentFile) {
-      this.fileNote.getNotesFromFile(this.currentFile).subscribe(
-        response => {
-          if (response instanceof HttpResponse) {
-            // If the response is an instance of HttpResponse, extract the JSON body
-            this.data = response.body?.answer;
-          } else {
-            console.error("Unexpected server response format:", response);
-          }
+      this.isLoading = true;
+      this.fileNote.getNotesFromFile(this.currentFile).subscribe({
+        next: (response) => {
+          this.data = response.answer;
+          this.isLoading = false;
         },
-        error => {
+        error: (error) => {
           console.error("Error occurred while fetching data:", error);
+          this.isLoading = false;
         }
-      );
+      });
     }
+  }
+
+  onNoteClick(description: string) {
+    // Encode the description to handle special characters in the URL
+    const encodedDescription = encodeURIComponent(description);
+    this.router.navigate(['/note-detail', encodedDescription]);
   }
 }

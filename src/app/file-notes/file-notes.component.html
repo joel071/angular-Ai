@@ -1,9 +1,22 @@
-<input type="file" (change)="selectFile($event)">
-<button (click)="onSubmit()">Upload</button>
-
-<div *ngIf="data">
-  <div *ngFor="let item of data">
-    <h3>{{ item.description }}</h3>
-    <p>{{ item.note }}</p>
-  </div>
+<div class="upload-box">
+  <label for="file-upload" class="custom-file-upload">
+    <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i> Choose File
+  </label>
+  <input id="file-upload" type="file" (change)="selectFile($event)" accept=".pdf,.doc,.docx,.txt" aria-label="Choose file to upload">
+  <span id="file-chosen">{{ fileName || 'No file chosen' }}</span>
+  <button (click)="onSubmit()" class="upload-button" [disabled]="!currentFile">Upload</button>
 </div>
+
+<app-spinner [isLoading]="isLoading" aria-label="Loading content"></app-spinner>
+
+<div *ngIf="data" class="container" role="list">
+    <div *ngFor="let item of data; let i = index" 
+         class="note-container" 
+         role="listitem"
+         (click)="onNoteClick(item.description)">
+        <h3 class="note-title" [attr.id]="'note-' + i">{{ item.note }}</h3>
+        <p class="note-description" [attr.aria-labelledby]="'note-' + i">{{ item.description }}</p>
+    </div>
+</div>
+
+<p *ngIf="!data && !isLoading" class="no-data-message">No notes available. Please upload a file to view notes.</p>

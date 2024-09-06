@@ -1,0 +1,122 @@
+.upload-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  border: 2px dashed #5c5d5e;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  max-width: 400px;
+  margin: 30px auto;
+  transition: all 0.3s ease;
+}
+
+.upload-box:hover {
+  border-color: #2980b9;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #8196a5;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-file-upload:hover {
+  background-color: #c8cfd4;
+}
+
+#file-upload {
+  display: none;
+}
+
+#file-chosen {
+  font-style: italic;
+  color: #555;
+}
+
+.upload-button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #6ac992;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+  background-color: #27ae60;
+}
+
+.upload-button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 30px auto;
+  background-color: #ecf0f1;
+  border-radius: 10px;
+}
+
+.note-container {
+  background-color: white;
+  border: 1px solid #bdc3c7;
+  padding: 15px;
+  border-radius: 8px;
+  flex: 1 1 300px;
+  max-width: 300px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.note-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.note-title {
+  color: #2c3e50;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.note-description {
+  color: #34495e;
+  line-height: 1.6;
+}
+
+.no-data-message {
+  text-align: center;
+  color: #7f8c8d;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .upload-box {
+    max-width: 90%;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .note-container {
+    flex-basis: 100%;
+    max-width: none;
+  }
+}

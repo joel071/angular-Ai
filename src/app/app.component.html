@@ -1,12 +1,16 @@
-<div class="header">
-  <img  src="assets\Logo.jpeg" alt="Logo Image" class="logo">
-  <h1 class="title">Ai Briefer</h1>
+<header class="header">
+  <div class="logo-title">
+    <div class="logo">
+      <i class="bi bi-robot"></i>
+      <span class="text">AI Briefer</span>
+    </div>
+  </div>
   <nav>
-    <a routerLink="/dashboard">Dashboard</a>
-    <a routerLink="/chatBot">ChatBot</a>
-    <a routerLink="/upload">Upload</a>
-    <a routerLink="/fileNotes">file Notes</a>
+    <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+    <a routerLink="/chatBot" routerLinkActive="active">ChatBot</a>
+    <a routerLink="/upload" routerLinkActive="active">Upload</a>
+    <a routerLink="/fileNotes" routerLinkActive="active">File Notes</a>
   </nav>
-</div>
+</header>
 <div class="line"></div>
 <router-outlet></router-outlet>

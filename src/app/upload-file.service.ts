@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UploadFileService {
-  private baseUrl = 'https://3d6f-34-125-112-211.ngrok-free.app';
+  private baseUrl = 'https://23cf-34-82-4-171.ngrok-free.app';
 
   constructor(private http: HttpClient) { }
 

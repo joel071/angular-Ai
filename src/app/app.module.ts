@@ -12,6 +12,8 @@ import { UploadFileService } from './upload-file.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FileNotesComponent } from './file-notes/file-notes.component';
 import { FileNotesService } from './file-notes.service';
+import { SpinnerComponent } from './spinner/spinner.component';
+import { NoteDetailComponent } from './note-detail/note-detail.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { FileNotesService } from './file-notes.service';
     ChatBotComponent,
     DashboardComponent,
     UploadComponent,
-    FileNotesComponent
+    FileNotesComponent,
+    SpinnerComponent,
+    NoteDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,7 @@ import { FileNotesService } from './file-notes.service';
     FormsModule,
     HttpClientModule 
   ],
-  providers: [ChatbotService, UploadFileService, FileNotesService],
+  providers: [ChatbotService, UploadFileService, FileNotesService, SpinnerComponent, NoteDetailComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,13 @@
+<div class="note-detail-container">
+  <div *ngIf="noteDetails" class="note-card">
+    <h2 class="note-title">Note Details</h2>
+    <div class="note-content">
+      <p class="note-description"><strong>Description:</strong> {{ noteDetails.description }}</p>
+      <!-- Display other details as needed -->
+    </div>
+  </div>
+  <div *ngIf="!noteDetails" class="loading">
+    <div class="loading-spinner"></div>
+    <p>Loading note details...</p>
+  </div>
+</div>
