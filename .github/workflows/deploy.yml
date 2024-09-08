@@ -29,7 +29,14 @@ jobs:
 
     steps:
     - name: Install iximiuz Labs CLI
-      run: curl -sf https://labs.iximiuz.com/cli/install.sh | sh
+      run: |
+        curl -sf https://labs.iximiuz.com/cli/install.sh | sh
+        # Check if the CLI was installed correctly
+        if ! command -v iximiuz &> /dev/null
+        then
+          echo "iximiuz CLI could not be found"
+          exit 1
+        fi
 
     - name: Deploy to server
       run: |
