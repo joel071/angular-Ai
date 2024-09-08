@@ -26,22 +26,19 @@ jobs:
 
     runs-on: ubuntu-latest
     needs: build
-    
+
     steps:
-    - name: Install CLI
+    - name: Install iximiuz Labs CLI
       run: curl -sf https://labs.iximiuz.com/cli/install.sh | sh
-      
+
     - name: Deploy to server
-      uses: appleboy/ssh-action@v0.1.3
-      with:
-        host: ${{ secrets.SERVER_IP}}
-        username: ${{ secrets.SERVER_USER}}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        script: |
-              docker pull ${{ secrets.DOCKER_USERNAME }}/angular-app:latest
-              docker stop note-app-container || true
-              docker rm note-app-container || true
-              docker run -d -p 80:80 --name angular-app-container ${{ secrets.DOCKER_USERNAME }}/note-app:latest
+      run: |
+        iximiuz ssh ${{ secrets.SERVER_IP }} -u ${{ secrets.SERVER_USER }} -k ${{ secrets.SSH_PRIVATE_KEY }} << 'EOF'
+          docker pull ${{ secrets.DOCKER_USERNAME }}/angular-app:latest
+          docker stop note-app-container || true
+          docker rm note-app-container || true
+          docker run -d -p 80:80 --name note-app-container ${{ secrets.DOCKER_USERNAME }}/note-app:latest
+        EOF
       
 
   
