@@ -31,12 +31,10 @@ jobs:
     - name: Install iximiuz Labs CLI
       run: |
         curl -sf https://labs.iximiuz.com/cli/install.sh | sh
-        # Check if the CLI was installed correctly
-        if ! command -v iximiuz &> /dev/null
-        then
-          echo "iximiuz CLI could not be found"
-          exit 1
-        fi
+        # Add the installation directory to PATH
+        echo "export PATH=$PATH:/home/runner/.iximiuz/labctl/bin" >> $GITHUB_ENV
+        # Verify the CLI is installed
+        labctl --version
 
     - name: Deploy to server
       run: |
