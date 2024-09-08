@@ -30,16 +30,18 @@ jobs:
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
-        echo "$SSH_PRIVATE_KEY" > /tmp/id_rsa
-        chmod 600 /tmp/id_rsa
+        mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
 
     - name: Add SSH key to known_hosts
       run: |
+        mkdir -p ~/.ssh
         ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
     - name: SSH into VM and Deploy Docker image
       run: |
-        ssh -i /tmp/id_rsa -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
+        ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
         docker pull ${{ secrets.DOCKER_USERNAME }}/note-app:latest &&
         docker stop my-container || true &&
         docker rm my-container || true &&
