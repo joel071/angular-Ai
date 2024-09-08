@@ -26,8 +26,11 @@ jobs:
 
     runs-on: ubuntu-latest
     needs: build
-
+    
     steps:
+    - name: Install CLI
+      run: curl -sf https://labs.iximiuz.com/cli/install.sh | sh
+      
     - name: Deploy to server
       uses: appleboy/ssh-action@v0.1.3
       with:
