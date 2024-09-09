@@ -42,8 +42,7 @@ jobs:
 
     - name: SSH into VM and Deploy Docker image
       run: |
-        chmod 600 ~/.ssh/id_ed25519
-        ssh-keyscan your-vm-ip >> ~/.ssh/known_hosts
+        chmod 600 ~/.ssh/id_rsa
         ssh -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}
         docker pull ${{ secrets.DOCKER_USERNAME }}/note-app:latest &&
         docker run -d --name my-container -p 80:80 ${{ secrets.DOCKER_USERNAME }}/note-app:latest
